@@ -120,4 +120,26 @@ function cuenta(int $numero = 10, int $incremento = 1) : string {
     return $respuesta;
 }
 
+echo ("<h1> <u> Ejercicio 5 </u> </h1>");
+
+$nota = 47;
+
+echo (gradoNota($nota));
+
+function gradoNota(int $nota) : string {
+    $respuesta = "";
+
+    if ($nota >= 60) {
+        $respuesta = "El alumno está en Primera División.";
+    } else if ( $nota >= 45 && $nota <= 59) {
+        $respuesta = "El alumno está en Segunda División.";
+    } else if ( $nota >= 33 && $nota <= 44) {
+        $respuesta = "El alumno está en Tercera División.";
+    } else {
+        $respuesta = "El alumno ha suspendido.";
+    }
+
+    return $respuesta;
+}
+
 ?>
