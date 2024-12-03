@@ -26,7 +26,7 @@ echo 'El string tiene ' . strlen($mensaje1) . ' caracteres.' . "<br>";
 echo strrev($mensaje1) . "<br>";
 
 $mensaje2 = "Aquest és el curs de PHP.";
-echo $mensaje1 . ' ' . $mensaje2 . "<br>";
+echo "$mensaje1 $mensaje2 <br>";
 
 echo "<h1> <u> Ejercicio 3 </u> </h1>";
 
@@ -35,58 +35,56 @@ $Y = 2;
 $N = 1.5;
 $M = 2.7;
 
-echo 'El valor de X es ' . $X . ' y el valor de Y es ' . $Y . "<br>";
+echo "El valor de X es $X y el valor de Y es $Y <br>";
 $suma = $X + $Y;
-echo $X . ' + ' . $Y . ' = ' . $suma . "<br>";
+echo "$X + $Y = $suma <br>";
 $resta = $X - $Y;
-echo $X . ' - ' . $Y . ' = ' . $resta . "<br>";
+echo "$X - $Y = $resta <br>";
 $producto = $X * $Y;
-echo $X . ' * ' . $Y . ' = ' . $producto . "<br>";
+echo "$X * $Y = $producto <br>";
 $modulo = $X % $Y;
-echo $X . ' % ' . $Y . ' = ' . $modulo . "<br>";
+echo "$X % $Y = $modulo <br>";
 echo "<br>";
 
-echo 'El valor de N es ' . $N . ' y el valor de M es ' . $M . "<br>";
+echo "El valor de N es $N y el valor de M es $M <br>";
 $suma = $N +  $M;
-echo $N . ' + ' . $M . ' = ' . $suma . "<br>";
+echo "$N + $M = $suma <br>";
 $resta = $N -  $M ;
-echo $N . ' - ' . $M . ' = ' . $resta . "<br>";
+echo "$N - $M = $resta <br>";
 $producto = $N *  $M ;
-echo $N . ' * ' . $M . ' = ' . $producto . "<br>";
+echo "$N * $M = $producto <br>";
 $modulo = fmod($N, $M); 
-echo $N . ' % ' . $M . ' = ' .  $modulo . "<br>";
+echo "$N % $M =  $modulo <br>";
 echo "<br>";
 
-echo 'El doble de ' . $X . ' es ' . ($X * 2) . "<br>";
-echo 'El doble de ' . $Y . ' es ' . ($Y * 2) . "<br>";
-echo 'El doble de ' . $N . ' es ' . ($N * 2) . "<br>";
-echo 'El doble de ' . $M . ' es ' . ($M * 2) . "<br>";
-echo 'La suma de ' . $X . ', ' . $Y . ', ' . $N . ' y ' . $M . ' es: ' 
-. ($X +  $Y + $N + $M) . "<br>";
-echo 'El producto de ' . $X . ', ' . $Y . ', ' . $N . ' y ' . $M . ' es: ' 
-. ($X *  $Y * $N * $M) . "<br>";
+echo "El doble de $X es ($X * 2) <br>";
+echo "El doble de $Y es ($Y * 2) <br>";
+echo "El doble de $N es ($N * 2) <br>";
+echo "El doble de $M es ($M * 2) <br>";
+echo "La suma de $X , $Y , $N y $M es: ($X +  $Y + $N + $M) <br>";
+echo "El producto de $X, $Y, $N y $M es: ($X *  $Y * $N * $M) <br>";
 
 $numero1 = 2;
 $numero2 = 12;
 $operador = "+";
 
 echo "<br>";
-echo calculadora($numero1, $numero2, $operador);
+echo calcula($numero1, $numero2, $operador);
 
-function calculadora(float $numero1, float $numero2, string $operador) : string {
+function calcula(float $numero1, float $numero2, string $operador) : string {
 
     switch ($operador) {
         case "+" :
-            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 + $numero2);
+            $respuesta = "$numero1 $operador $numero2 = ($numero1 + $numero2)";
             break;
         case "-" :
-            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 - $numero2);
+            $respuesta = "$numero1 $operador $numero2 ($numero1 - $numero2)";
             break;
         case "*" :
-            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 * $numero2);
+            $respuesta = "$numero1 $operador $numero2 ($numero1 * $numero2)";
             break;
         case "/" :
-            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 / $numero2);
+            $respuesta = "$numero1 $operador $numero2 = ($numero1 / $numero2)";
             break;
         default:
             $respuesta = 'Error: operador no válido';
@@ -101,8 +99,8 @@ echo "<h1> <u> Ejercicio 4 </u> </h1>";
 $numero = 20;
 $incremento = 2;
 
-echo 'La cuenta con los parámetros declarados es:' . "<br>" . cuenta($numero, $incremento) . "<br>";
-echo 'La cuenta con los parámetros por defecto es:' . "<br>". cuenta();
+echo "La cuenta con los parámetros declarados es: <br>" . cuenta($numero, $incremento) . "<br>";
+echo "La cuenta con los parámetros por defecto es: <br>" . cuenta(). "<br>";
 
 function cuenta(int $numero = 10, int $incremento = 1) : string {
     $respuesta = "";
@@ -125,9 +123,9 @@ echo "<h1> <u> Ejercicio 5 </u> </h1>";
 
 $nota = 47;
 
-echo gradoNota($nota);
+echo calculaGrado($nota);
 
-function gradoNota(int $nota) : string {
+function calculaGrado(int $nota) : string {
     $respuesta = "";
 
     if ($nota >= 60) {
@@ -144,25 +142,15 @@ function gradoNota(int $nota) : string {
 }
 
 echo "<h1> <u> Ejercicio 6 </u> </h1>";
-    
-    $mordido = 0;
-    $noMordido = 0;
 
-for ($i = 0; $i <100; $i++) {
-    if (isBitten()) {
-        $mordido++;
-    } else {
-        $noMordido++;
-    }
-}
+echo isBitten();
 
-echo "Charlie me ha mordido el dedo " . $mordido . " veces <br>";
-echo "Charlie no me ha mordido el dedo " . $noMordido . " veces <br>";
+ function isBitten() : string {
+    $respuesta = "";
 
- function isBitten() : bool {
-    $random = rand(0,1);
+    return (rand(0,1) === 1) ? 'True' : 'False';    
 
-    return $random === 1;
+    return $respuesta;
  }
 
 ?>
