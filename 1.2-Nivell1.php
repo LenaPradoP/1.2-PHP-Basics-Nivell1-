@@ -1,156 +1,165 @@
 <?php
 declare(strict_types = 1);
 
-echo "<h1> <u> Ejercicio 1 </u> </h1>";
+echo 'Ejercicio 1' .PHP_EOL .PHP_EOL;
 
 $entero = 1;
 $decimal = 1.5;
 $palabra = "Hola";
 $boolean = true;
 
-echo "$entero <br>";
-echo "$decimal <br>";
-echo "$palabra <br>";
-echo "$boolean  <br>"; 
+echo $entero .PHP_EOL;
+echo $decimal .PHP_EOL;
+echo $palabra .PHP_EOL;
+echo $boolean  .PHP_EOL;
 
 define("NOMBRE", "Lena Prado");
-echo'<h1>' . NOMBRE . '</h1>';
+echo NOMBRE .PHP_EOL .PHP_EOL;
 
-echo "<h1> <u> Ejercicio 2 </u> </h1>";
+echo 'Ejercicio 2' .PHP_EOL .PHP_EOL;
 
-$mensaje1 = "Hello, World!";
+$mensaje1 = 'Hello, World!';
 
-echo $mensaje1 . "<br>";
-echo strtoupper($mensaje1) . "<br>";
-echo 'El string tiene ' . strlen($mensaje1) . ' caracteres.' . "<br>";
-echo strrev($mensaje1) . "<br>";
+echo $mensaje1 .PHP_EOL;
+echo strtoupper($mensaje1) .PHP_EOL;
+echo 'El string tiene ' . strlen($mensaje1) . ' caracteres.' .PHP_EOL;
+echo strrev($mensaje1) .PHP_EOL;
 
-$mensaje2 = "Aquest és el curs de PHP.";
-echo "$mensaje1 $mensaje2 <br>";
+$mensaje2 = 'Aquest és el curs de PHP.';
+echo $mensaje1 . $mensaje2 .PHP_EOL .PHP_EOL;
 
-echo "<h1> <u> Ejercicio 3 </u> </h1>";
+echo 'Ejercicio 3' .PHP_EOL .PHP_EOL;
 
 $X = 1;
 $Y = 2;
 $N = 1.5;
 $M = 2.7;
 
-echo "El valor de X es $X y el valor de Y es $Y <br>";
+echo "El valor de X es $X y el valor de Y es $Y" .PHP_EOL;
 $suma = $X + $Y;
-echo "$X + $Y = $suma <br>";
+echo "$X + $Y = $suma" .PHP_EOL;
 $resta = $X - $Y;
-echo "$X - $Y = $resta <br>";
+echo "$X - $Y = $resta" .PHP_EOL;
 $producto = $X * $Y;
-echo "$X * $Y = $producto <br>";
+echo "$X * $Y = $producto" .PHP_EOL;
 $modulo = $X % $Y;
-echo "$X % $Y = $modulo <br>";
-echo "<br>";
+echo "$X % $Y = $modulo" .PHP_EOL .PHP_EOL;
 
-echo "El valor de N es $N y el valor de M es $M <br>";
+echo "El valor de N es $N y el valor de M es $M" .PHP_EOL;
 $suma = $N +  $M;
-echo "$N + $M = $suma <br>";
-$resta = $N -  $M ;
-echo "$N - $M = $resta <br>";
-$producto = $N *  $M ;
-echo "$N * $M = $producto <br>";
+echo "$N + $M = $suma" .PHP_EOL;
+$resta = $N -  $M;
+echo "$N - $M = $resta" .PHP_EOL;
+$producto = $N *  $M;
+echo "$N * $M = $producto" .PHP_EOL;
 $modulo = fmod($N, $M); 
-echo "$N % $M =  $modulo <br>";
-echo "<br>";
+echo "$N % $M =  $modulo" .PHP_EOL .PHP_EOL;
 
-echo "El doble de $X es ($X * 2) <br>";
-echo "El doble de $Y es ($Y * 2) <br>";
-echo "El doble de $N es ($N * 2) <br>";
-echo "El doble de $M es ($M * 2) <br>";
-echo "La suma de $X , $Y , $N y $M es: ($X +  $Y + $N + $M) <br>";
-echo "El producto de $X, $Y, $N y $M es: ($X *  $Y * $N * $M) <br>";
+echo "El doble de $X es " . ($X * 2) .PHP_EOL;
+echo "El doble de $Y es " . ($Y * 2) .PHP_EOL;
+echo "El doble de $N es " . ($N * 2) .PHP_EOL;
+echo "El doble de $M es " . ($M * 2) .PHP_EOL;
+echo "La suma de $X , $Y , $N y $M es: " . ($X +  $Y + $N + $M) .PHP_EOL;
+echo "El producto de $X, $Y, $N y $M es: " . ($X *  $Y * $N * $M) .PHP_EOL .PHP_EOL;
 
 $numero1 = 2;
 $numero2 = 12;
 $operador = "+";
 
-echo "<br>";
-echo calcula($numero1, $numero2, $operador);
+echo calcular($numero1, $numero2, $operador) .PHP_EOL;
 
-function calcula(float $numero1, float $numero2, string $operador) : string {
+
+function calcular(float $numero1, float $numero2, string $operador) : string {
 
     switch ($operador) {
         case "+" :
-            $respuesta = "$numero1 $operador $numero2 = ($numero1 + $numero2)";
+            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 + $numero2) .PHP_EOL;
             break;
         case "-" :
-            $respuesta = "$numero1 $operador $numero2 ($numero1 - $numero2)";
+            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 - $numero2) .PHP_EOL;
             break;
         case "*" :
-            $respuesta = "$numero1 $operador $numero2 ($numero1 * $numero2)";
+            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 * $numero2) .PHP_EOL;
             break;
         case "/" :
-            $respuesta = "$numero1 $operador $numero2 = ($numero1 / $numero2)";
+            $respuesta = "$numero1 $operador $numero2 = " . ($numero1 / $numero2) .PHP_EOL;
             break;
         default:
-            $respuesta = 'Error: operador no válido';
+            $respuesta = 'Error: operador no válido' .PHP_EOL;
             break;
     }
 
     return $respuesta;
 }
 
-echo "<h1> <u> Ejercicio 4 </u> </h1>";
+echo 'Ejercicio 4' .PHP_EOL .PHP_EOL;
 
 $numero = 20;
 $incremento = 2;
 
-echo "La cuenta con los parámetros declarados es: <br>" . cuenta($numero, $incremento) . "<br>";
-echo "La cuenta con los parámetros por defecto es: <br>" . cuenta(). "<br>";
+echo "La cuenta con los parámetros declarados es: " .PHP_EOL . contar($numero, $incremento) .PHP_EOL;
+echo "La cuenta con los parámetros por defecto es: " .PHP_EOL . contar() .PHP_EOL;
 
-function cuenta(int $numero = 10, int $incremento = 1) : string {
+function contar(int $numero = 10, int $incremento = 1) : string {
     $respuesta = "";
 
     if ($incremento <= 0) {
-        $respuesta = "El incremento debe ser mayor que 0.";
+        $respuesta = "El incremento debe ser mayor que 0." .PHP_EOL;
     } else {
         for ($i = 1; $i <= $numero; $i += $incremento) {
-            $respuesta .= (string)$i . "<br>";
+            $respuesta .= (string)$i .PHP_EOL;
         }   
         if (($i - $incremento) < $numero) {
-            $respuesta .= (string)$numero . "<br>";
+            $respuesta .= (string)$numero .PHP_EOL;
         }
     }
 
     return $respuesta;
 }
 
-echo "<h1> <u> Ejercicio 5 </u> </h1>";
+echo 'Ejercicio 5' .PHP_EOL .PHP_EOL;
 
 $nota = 47;
 
-echo calculaGrado($nota);
+echo calcularGrado($nota);
 
-function calculaGrado(int $nota) : string {
+function calcularGrado(int $nota) : string {
     $respuesta = "";
 
     if ($nota >= 60) {
-        $respuesta = "El alumno está en Primera División.";
-    } elseif ( $nota >= 45 && $nota <= 59) {
-        $respuesta = "El alumno está en Segunda División.";
-    } elseif ( $nota >= 33 && $nota <= 44) {
-        $respuesta = "El alumno está en Tercera División.";
+        $respuesta = "El alumno está en Primera División." .PHP_EOL;
+    } elseif ( $nota >= 45) {
+        $respuesta = "El alumno está en Segunda División." .PHP_EOL;
+    } elseif ( $nota >= 33) {
+        $respuesta = "El alumno está en Tercera División." .PHP_EOL;
     } else {
-        $respuesta = "El alumno ha suspendido.";
+        $respuesta = "El alumno ha suspendido." .PHP_EOL;
     }
 
     return $respuesta;
 }
+echo '' .PHP_EOL;
+echo 'Ejercicio 6' .PHP_EOL .PHP_EOL;
+    $mordido = 0;
+    $noMordido = 0;
 
-echo "<h1> <u> Ejercicio 6 </u> </h1>";
+for ($i = 0; $i <100; $i++) {
+    if (isBitten() == 'True') {
+    $mordido++;
+    } else {
+    $noMordido++;
+    }
+}
 
-echo isBitten();
+echo "Charlie me ha mordido el dedo " . $mordido . " veces." .PHP_EOL;
+echo "Charlie no me ha mordido el dedo " . $noMordido . " veces." .PHP_EOL;
 
- function isBitten() : string {
-    $respuesta = "";
-
+function isBitten() : string {
+    $random = rand(0,1);
     return (rand(0,1) === 1) ? 'True' : 'False';    
 
+    return $random === 1;
     return $respuesta;
- }
+}
 
 ?>
